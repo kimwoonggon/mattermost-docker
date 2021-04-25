@@ -23,10 +23,10 @@ services:
     build:
       context: app
       # uncomment following lines for team edition or change UID/GID
-      # args:
-      #   - edition=team
-      #   - PUID=1000
-      #   - PGID=1000
+      args:
+         - edition=team
+         - PUID=1000
+         - PGID=1000
       #   - MM_VERSION=5.31
     restart: unless-stopped
     volumes:
@@ -55,7 +55,7 @@ services:
   web:
     build: web
     ports:
-      - "80:80"
+      - "8888:80"
       - "443:443"
     read_only: true
     restart: unless-stopped
